@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CS-UY 1134 — Code Deck</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo">{ }</span>
+    <div>
+      <h1>CS-UY 1134 — Code Deck</h1>
+      <p class="sub">All 32 exam "moves" — browse them, or flashcard yourself to recall them cold.</p>
+    </div>
+  </div>
+  <nav class="modes">
+    <button id="m-browse" class="active" onclick="App.mode('browse')">Browse</button>
+    <button id="m-cards" onclick="App.mode('cards')">Flashcards</button>
+  </nav>
+</header>
+
+<!-- BROWSE -->
+<section id="browse" class="view active">
+  <div class="controls">
+    <input id="search" placeholder="search name / when-to-use…" oninput="App.render()" />
+    <select id="cat" onchange="App.render()"></select>
+    <span class="count" id="count"></span>
+  </div>
+  <div id="grid" class="grid"></div>
+</section>
+
+<!-- FLASHCARDS -->
+<section id="cards" class="view">
+  <div class="deckbar">
+    <select id="deckcat" onchange="App.newDeck()"></select>
+    <button onclick="App.shuffle()" class="ghost">shuffle</button>
+    <span class="progress" id="progress"></span>
+  </div>
+  <div class="card" id="card">
+    <div class="card-cat" id="card-cat"></div>
+    <div class="card-name" id="card-name"></div>
+    <div class="card-when" id="card-when"></div>
+    <div class="card-hint">try to write it from memory…</div>
+    <pre class="card-code hidden" id="card-code"></pre>
+    <div class="card-actions">
+      <button id="reveal" onclick="App.reveal()">reveal code</button>
+      <div id="grade" class="grade hidden">
+        <button class="bad" onclick="App.grade(false)">✗ shaky</button>
+        <button class="good" onclick="App.grade(true)">✓ got it</button>
+      </div>
+    </div>
+  </div>
+  <div class="deckdone hidden" id="deckdone"></div>
+</section>
+
+<footer>
+  Built by Candy for the CS-UY 1134 final · <span id="total"></span> codes · the moves that compose every exam question
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

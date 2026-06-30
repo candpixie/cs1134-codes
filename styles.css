@@ -1,0 +1,62 @@
+:root{
+  --bg:#0f0d17; --panel:#17141f; --panel2:#1e1a28; --ink:#ece9f5; --muted:#9b93b4;
+  --accent:#9a7ff0; --accent2:#c9b6ff; --line:#2a2536; --good:#3ecf8e; --bad:#f2557a;
+  --kw:#c9a2ff; --cm:#6f6786; --st:#7fe0a8;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.5}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:18px 24px;background:linear-gradient(120deg,#1b1530,#241a3d);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{font-family:ui-monospace,monospace;font-size:26px;font-weight:700;color:var(--accent2);
+  background:rgba(154,127,240,.15);padding:6px 10px;border-radius:10px}
+.top h1{margin:0;font-size:19px}
+.sub{margin:2px 0 0;font-size:13px;color:var(--muted)}
+.modes button{border:1px solid var(--line);background:transparent;color:var(--muted);
+  padding:9px 16px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;margin-left:6px}
+.modes button.active{background:var(--accent);color:#15101f;border-color:var(--accent)}
+.view{display:none;padding:20px 24px;max-width:1100px;margin:0 auto}
+.view.active{display:block}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+input,select{background:var(--panel);border:1px solid var(--line);color:var(--ink);
+  padding:9px 12px;border-radius:9px;font-size:14px;font-family:inherit}
+input{flex:1;min-width:180px}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+.count,.progress{color:var(--muted);font-size:13px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.tile-h{padding:12px 14px;border-bottom:1px solid var(--line)}
+.tile-name{font-family:ui-monospace,monospace;font-weight:700;font-size:15px;color:var(--accent2)}
+.tile-when{font-size:12.5px;color:var(--muted);margin-top:2px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:10.5px;padding:3px 8px;border-radius:999px;background:var(--panel2);color:var(--muted)}
+.tag.move{color:var(--accent2);background:rgba(154,127,240,.13)}
+.tag.exam{color:var(--st);background:rgba(127,224,168,.1)}
+pre.code,pre.card-code{margin:0;padding:13px 14px;background:#120f1b;overflow:auto;
+  font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.55;
+  color:#ddd6f0;white-space:pre;flex:1}
+.tok-kw{color:var(--kw);font-weight:600}
+.tok-cm{color:var(--cm);font-style:italic}
+.tok-st{color:var(--st)}
+/* flashcards */
+.deckbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px;justify-content:center}
+.ghost{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 14px;border-radius:9px;cursor:pointer;font-weight:600}
+.card{max-width:760px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;min-height:260px}
+.card-cat{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:700}
+.card-name{font-family:ui-monospace,monospace;font-size:26px;font-weight:700;margin:8px 0 4px}
+.card-when{font-size:15px;color:var(--muted)}
+.card-hint{margin-top:18px;font-size:13px;color:var(--cm);font-style:italic}
+.card-code{margin-top:14px;border-radius:12px;max-height:48vh}
+.card-actions{margin-top:18px;display:flex;justify-content:center;gap:12px;align-items:center}
+.card-actions button{border:none;border-radius:10px;padding:11px 22px;font-size:15px;font-weight:700;cursor:pointer}
+#reveal{background:var(--accent);color:#15101f}
+.grade{display:flex;gap:12px}
+.grade .good{background:var(--good);color:#0c2418}
+.grade .bad{background:var(--bad);color:#2a0c16}
+.hidden{display:none}
+.deckdone{max-width:760px;margin:18px auto 0;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;font-size:17px}
+.deckdone b{color:var(--accent2)}
+footer{padding:22px 24px;text-align:center;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);margin-top:30px}
+@media(max-width:560px){.top{flex-direction:column;align-items:flex-start}}
