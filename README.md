@@ -1,6 +1,6 @@
-# CS-UY 1134 — Code Deck
+# CS-UY 1134 deck 
 
-A study tool for NYU Tandon's CS-UY 1134 (Data Structures & Algorithms) final.
+A tool for NYU Tandon's CS-UY 1134 (Data Structures & Algorithms) final.
 All 32 core "moves" — the code patterns that compose every exam question — in two modes:
 
 - **Browse** — every code, searchable, filterable by category, with its *when-to-use* and its *move* (the one-line idea that makes it click).
