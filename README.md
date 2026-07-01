@@ -1,5 +1,7 @@
 # CS-UY 1134 deck 
 
+> **Disclaimer.** For personal use only during studying. Not affiliated with or endorsed by NYU or any instructor. The patterns here are general data-structures concepts and for reference only.
+
 A tool for NYU Tandon's CS-UY 1134 (Data Structures & Algorithms) final.
 All 32 core "moves" — the code patterns that compose every exam question — in two modes:
 
