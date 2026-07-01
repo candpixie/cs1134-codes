@@ -14,7 +14,7 @@ code:`def total(node):
         return 0
     return node.data + total(node.left) + total(node.right)` },
 
-{ id:3, cat:"Tree recursion", name:"height", when:"longest branch / depth", move:"combiner = max", exam:"Mock-Final Q3 (longest branch)",
+{ id:3, cat:"Tree recursion", name:"height", when:"longest branch / depth", move:"combiner = max", exam:"classic",
 code:`def height(node):
     if node is None:
         return 0
@@ -28,7 +28,7 @@ code:`def count_leaves(node):
         return 1
     return count_leaves(node.left) + count_leaves(node.right)` },
 
-{ id:5, cat:"Tree recursion", name:"count_at_depth", when:"count nodes exactly k levels down", move:"k==0 -> 1; pass k-1", exam:"Midterm 2 Q4",
+{ id:5, cat:"Tree recursion", name:"count_at_depth", when:"count nodes exactly k levels down", move:"k==0 -> 1; pass k-1", exam:"classic variant",
 code:`def count_at_depth(node, k):
     if node is None:
         return 0
@@ -37,7 +37,7 @@ code:`def count_at_depth(node, k):
     return count_at_depth(node.left, k-1) + count_at_depth(node.right, k-1)` },
 
 // ---------- B. Tree recursion (tuple) ----------
-{ id:6, cat:"Tree recursion (tuple)", name:"is_size_tree", when:"each node.data == size of its subtree", move:"return (valid, count)", exam:"2019 Final Q4",
+{ id:6, cat:"Tree recursion (tuple)", name:"is_size_tree", when:"each node.data == size of its subtree", move:"return (valid, count)", exam:"classic (tuple return)",
 code:`def is_size_tree(bin_tree):
     valid, count = size_helper(bin_tree.root)
     return valid
@@ -60,7 +60,7 @@ code:`def is_balanced(node):
     my_ok = lok and rok and abs(lh - rh) <= 1
     return (my_ok, 1 + max(lh, rh))` },
 
-{ id:8, cat:"Tree recursion (tuple)", name:"mono", when:"all nodes the same value", move:"ME = node.data == target; combiner = and", exam:"Mock-Final Q4",
+{ id:8, cat:"Tree recursion (tuple)", name:"mono", when:"all nodes the same value", move:"ME = node.data == target; combiner = and", exam:"classic",
 code:`def mono(self):
     if self.root is None:
         return True
@@ -73,7 +73,7 @@ def mono_helper(node, target):
             and mono_helper(node.left, target)
             and mono_helper(node.right, target))` },
 
-{ id:9, cat:"Tree recursion (tuple)", name:"is_BST", when:"validate a binary search tree", move:"bounds: each node in (lo, hi)", exam:"Lab 6 Q4 — top final bet",
+{ id:9, cat:"Tree recursion (tuple)", name:"is_BST", when:"validate a binary search tree", move:"bounds: each node in (lo, hi)", exam:"must-know",
 code:`def is_BST(bin_tree):
     return helper(bin_tree.root, float('-inf'), float('inf'))
 
@@ -85,7 +85,7 @@ def helper(node, lo, hi):
     return (helper(node.left, lo, node.data)
             and helper(node.right, node.data, hi))` },
 
-{ id:10, cat:"Tree recursion (tuple)", name:"is_full", when:"every node has 0 or 2 children", move:"exactly-one-child -> False", exam:"Lab 6 Q2",
+{ id:10, cat:"Tree recursion (tuple)", name:"is_full", when:"every node has 0 or 2 children", move:"exactly-one-child -> False", exam:"classic",
 code:`def is_full(node):
     if node is None:
         return True
@@ -93,7 +93,7 @@ code:`def is_full(node):
         return False
     return is_full(node.left) and is_full(node.right)` },
 
-{ id:11, cat:"Tree recursion (tuple)", name:"is_perfect", when:"full AND all leaves same depth", move:"return (perfect, height); equal heights", exam:"Lab 6 Q3",
+{ id:11, cat:"Tree recursion (tuple)", name:"is_perfect", when:"full AND all leaves same depth", move:"return (perfect, height); equal heights", exam:"classic",
 code:`def is_perfect(node):
     ok, h = perfect_helper(node)
     return ok
@@ -107,7 +107,7 @@ def perfect_helper(node):
     return (my_ok, 1 + max(lh, rh))` },
 
 // ---------- C. BST pruning ----------
-{ id:12, cat:"BST pruning", name:"count_in_range", when:"count values with lo <= v <= hi", move:"too small->right, too big->left", exam:"prior final variant",
+{ id:12, cat:"BST pruning", name:"count_in_range", when:"count values with lo <= v <= hi", move:"too small->right, too big->left", exam:"classic",
 code:`def count_in_range(node, lo, hi):
     if node is None:
         return 0
@@ -117,7 +117,7 @@ code:`def count_in_range(node, lo, hi):
         return count_in_range(node.left, lo, hi)
     return 1 + count_in_range(node.left, lo, hi) + count_in_range(node.right, lo, hi)` },
 
-{ id:13, cat:"BST pruning", name:"sum_in_range", when:"sum values with lo <= v <= hi", move:"same, ME = node.val", exam:"prior final variant",
+{ id:13, cat:"BST pruning", name:"sum_in_range", when:"sum values with lo <= v <= hi", move:"same, ME = node.val", exam:"classic",
 code:`def sum_in_range(node, lo, hi):
     if node is None:
         return 0
@@ -128,7 +128,7 @@ code:`def sum_in_range(node, lo, hi):
     return node.val + sum_in_range(node.left, lo, hi) + sum_in_range(node.right, lo, hi)` },
 
 // ---------- D. Linked list ----------
-{ id:14, cat:"Linked list", name:"remove_duplicates", when:"drop repeats, avg linear", move:"seen-set + delete", exam:"2019 Final Q3",
+{ id:14, cat:"Linked list", name:"remove_duplicates", when:"drop repeats, avg linear", move:"seen-set + delete", exam:"classic",
 code:`def remove_duplicates(lnk_lst):
     seen = HashTableMap()
     curr = lnk_lst.first_node()
@@ -156,7 +156,7 @@ code:`def count_distinct(lnk_lst):
         curr = nxt
     return count` },
 
-{ id:16, cat:"Linked list", name:"reverse", when:"reverse in place", move:"save -> flip -> advance both", exam:"core (MT2 had pointer rewiring)",
+{ id:16, cat:"Linked list", name:"reverse", when:"reverse in place", move:"save -> flip -> advance both", exam:"core",
 code:`def reverse(self):
     prev = None
     curr = self.head
@@ -176,7 +176,7 @@ code:`def middle(self):
         fast = fast.next.next
     return slow.val` },
 
-{ id:18, cat:"Linked list", name:"merge_linked_lists", when:"merge two SORTED lists", move:"two pointers, take smaller front", exam:"HW5 Q5",
+{ id:18, cat:"Linked list", name:"merge_linked_lists", when:"merge two SORTED lists", move:"two pointers, take smaller front", exam:"classic",
 code:`def merge_linked_lists(a, b):
     result = DoublyLinkedList()
     na = a.first_node()
@@ -197,7 +197,7 @@ code:`def merge_linked_lists(a, b):
     return result` },
 
 // ---------- E. Generators ----------
-{ id:19, cat:"Generators", name:"running_min", when:"yield the running minimum", move:"running state + yield", exam:"HW2 / lec3",
+{ id:19, cat:"Generators", name:"running_min", when:"yield the running minimum", move:"running state + yield", exam:"generators",
 code:`def running_min(lst):
     m = None
     for x in lst:
@@ -207,7 +207,7 @@ code:`def running_min(lst):
             m = min(m, x)
         yield m` },
 
-{ id:20, cat:"Generators", name:"running_total", when:"yield the cumulative sum", move:"start at 0, accumulate, yield", exam:"HW2 / lec3",
+{ id:20, cat:"Generators", name:"running_total", when:"yield the cumulative sum", move:"start at 0, accumulate, yield", exam:"generators",
 code:`def running_total(lst):
     total = 0
     for x in lst:
@@ -215,7 +215,7 @@ code:`def running_total(lst):
         yield total` },
 
 // ---------- F. Trees / heap / traversals ----------
-{ id:21, cat:"Traversals", name:"preorder / inorder / postorder", when:"visit every node in an order", move:"only the yield position moves", exam:"core (Q2 family)",
+{ id:21, cat:"Traversals", name:"preorder / inorder / postorder", when:"visit every node in an order", move:"only the yield position moves", exam:"core",
 code:`def preorder(node):     # root, L, R
     if node is None:
         return
@@ -253,7 +253,7 @@ code:`def level_order(self):
             q.enqueue(node.right)
     return out` },
 
-{ id:23, cat:"Heap", name:"heap insert (percolate up)", when:"add to a min-heap", move:"append end, swap with parent i//2", exam:"lec10 / Q2",
+{ id:23, cat:"Heap", name:"heap insert (percolate up)", when:"add to a min-heap", move:"append end, swap with parent i//2", exam:"core",
 code:`def insert(self, item):
     self.data.append(item)
     j = len(self.data) - 1
@@ -261,7 +261,7 @@ code:`def insert(self, item):
         self.data[j], self.data[j // 2] = self.data[j // 2], self.data[j]
         j = j // 2` },
 
-{ id:24, cat:"Heap", name:"heap delete_min (percolate down)", when:"remove the min", move:"last->root, swap smaller child", exam:"lec10 / Q2",
+{ id:24, cat:"Heap", name:"heap delete_min (percolate down)", when:"remove the min", move:"last->root, swap smaller child", exam:"core",
 code:`def delete_min(self):
     self.data[1], self.data[-1] = self.data[-1], self.data[1]
     item = self.data.pop()
@@ -277,7 +277,7 @@ code:`def delete_min(self):
         j = s
     return item` },
 
-{ id:25, cat:"Stacks", name:"eval_postfix", when:"evaluate a postfix expression", move:"stack of operands; op pops two", exam:"HW4 Q1 / lec7",
+{ id:25, cat:"Stacks", name:"eval_postfix", when:"evaluate a postfix expression", move:"stack of operands; op pops two", exam:"classic",
 code:`def eval_postfix(tokens):
     stack = ArrayStack()
     for tok in tokens:
@@ -296,7 +296,7 @@ code:`def eval_postfix(tokens):
             stack.push(int(tok))
     return stack.pop()` },
 
-{ id:26, cat:"Trees", name:"build expression tree (postfix)", when:"build the tree from postfix", move:"stack of subtrees", exam:"lec7 / lec9",
+{ id:26, cat:"Trees", name:"build expression tree (postfix)", when:"build the tree from postfix", move:"stack of subtrees", exam:"classic",
 code:`def build(tokens):
     stack = []
     for tok in tokens:
@@ -308,7 +308,7 @@ code:`def build(tokens):
             stack.append(Node(tok))
     return stack.pop()` },
 
-{ id:27, cat:"Trees", name:"reconstruct from traversals", when:"draw/build tree from inorder + postorder", move:"post last = root; split inorder", exam:"2019 Final Q1 / Mock Q1",
+{ id:27, cat:"Trees", name:"reconstruct from traversals", when:"draw/build tree from inorder + postorder", move:"post last = root; split inorder", exam:"classic",
 code:`def build(inorder, post):
     if not inorder:
         return None
@@ -345,7 +345,7 @@ code:`class UniqueQueue:
         del self.present[x]
         return x` },
 
-{ id:29, cat:"Compose-a-class", name:"ExtendedPartiesQueue", when:"FIFO parties by name, O(1)", move:"queue (names) + map (name->size)", exam:"2019 Final Q5 / MT2 Q3 cousin",
+{ id:29, cat:"Compose-a-class", name:"ExtendedPartiesQueue", when:"FIFO parties by name, O(1)", move:"queue (names) + map (name->size)", exam:"compose family",
 code:`class ExtendedPartiesQueue:
     def __init__(self):
         self.order = ArrayQueue()
@@ -371,7 +371,7 @@ code:`class ExtendedPartiesQueue:
         del self.sizes[name]
         return size` },
 
-{ id:30, cat:"Compose-a-class", name:"BrowserHistory", when:"keep 3 most-recent, O(1)", move:"DLL (recency) + map (site->node)", exam:"FA25 Mock Q6",
+{ id:30, cat:"Compose-a-class", name:"BrowserHistory", when:"keep 3 most-recent, O(1)", move:"DLL (recency) + map (site->node)", exam:"compose family",
 code:`class BrowserHistory:
     def __init__(self):
         self.recency = DoublyLinkedList()
@@ -400,7 +400,7 @@ code:`class BrowserHistory:
         self.recency.delete_node(node)
         del self.lookup[site]` },
 
-{ id:31, cat:"Compose-a-class", name:"MaxStack", when:"push/pop/max all O(1)", move:"augment: parallel maxes stack", exam:"HW4 Q2",
+{ id:31, cat:"Compose-a-class", name:"MaxStack", when:"push/pop/max all O(1)", move:"augment: parallel maxes stack", exam:"compose family",
 code:`class MaxStack:
     def __init__(self):
         self.data = ArrayStack()
@@ -424,7 +424,7 @@ code:`class MaxStack:
         return self.maxes.top()` },
 
 // ---------- H. Pointer rewiring ----------
-{ id:32, cat:"Pointer rewiring", name:"right_circular_shift", when:"move last node to front (rewire prev/next)", move:"UNLINK end + LINK front", exam:"Midterm 2 Q2",
+{ id:32, cat:"Pointer rewiring", name:"right_circular_shift", when:"move last node to front (rewire prev/next)", move:"UNLINK end + LINK front", exam:"pointer rewiring",
 code:`def right_circular_shift(self):
     if len(self) <= 1:
         return

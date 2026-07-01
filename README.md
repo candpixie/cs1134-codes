@@ -3,7 +3,7 @@
 A study tool for NYU Tandon's CS-UY 1134 (Data Structures & Algorithms) final.
 All 32 core "moves" — the code patterns that compose every exam question — in two modes:
 
-- **Browse** — every code, searchable, filterable by category, with its *when-to-use*, its *move*, and *which exam it appeared on*.
+- **Browse** — every code, searchable, filterable by category, with its *when-to-use* and its *move* (the one-line idea that makes it click).
 - **Flashcards** — see the name + when-to-use, try to write it from memory, then reveal. Mark "got it / shaky"; shaky cards come back at the end. (Active recall, the thing that actually sticks.)
 
 Covers: tree recursion (single + tuple), BST pruning, linked lists, generators, traversals, heaps, stacks, compose-a-class, pointer rewiring.

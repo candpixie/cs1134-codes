@@ -1,0 +1,4 @@
+# local tooling / deploy artifacts — never publish
+.gstack/
+.vercel/
+.DS_Store
