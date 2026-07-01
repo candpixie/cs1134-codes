@@ -26,7 +26,7 @@ const App = {
     const cats = ["All categories", ...Array.from(new Set(CARDS.map(c=>c.cat)))];
     $("cat").innerHTML = cats.map(c=>`<option>${c}</option>`).join("");
     $("deckcat").innerHTML = cats.map(c=>`<option>${c}</option>`).join("");
-    $("total").textContent = CARDS.length;
+    if($("total")) $("total").textContent = CARDS.length;
     this.render();
     this.newDeck();
   },
